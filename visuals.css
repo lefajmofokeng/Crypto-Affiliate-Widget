@@ -1,0 +1,242 @@
+        /* ----- COMPONENT ISOLATED CSS ----- */
+        /* Prefix: icaw- (IT Crypto Affiliate Widget) */
+
+        #it-crypto-affiliate-widget-container {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(180deg, #0A0F1D 0%, #0A0F1D 60%, #959eb3a2 100%);
+            color: #ffffff;
+            padding: 150px 20px;
+            box-sizing: border-box;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #it-crypto-affiliate-widget-container * {
+            box-sizing: border-box;
+        }
+
+        /* Header */
+        .icaw-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .icaw-title {
+            font-size: 29px;
+            font-weight: 600;
+            line-height: 1.2;
+            margin: 0 0 26px 0;
+            color: white;
+        }
+
+        .icaw-link-btn {
+            color: #0091ff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            display: inline-flex;
+            align-items: center;
+            transition: color 0.2s;
+        }
+
+        .icaw-link-btn:hover { color: #3385ff; }
+        .icaw-link-btn svg { margin-left: 8px; width: 16px; height: 16px; }
+
+        /* Controls */
+        .icaw-controls-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 7rem;
+        }
+
+        .icaw-tabs {
+            display: flex;
+            gap: 12px;
+            background: #131A2A;
+            padding: 4px;
+            border-radius: 24px;
+        }
+
+        .icaw-tab {
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #8A94A6;
+            transition: all 0.2s;
+            user-select: none;
+        }
+
+        .icaw-tab:hover { color: #ffffff; }
+
+        .icaw-tab.icaw-active {
+            background: #1C283E;
+            color: #0091ff;
+        }
+        
+        .icaw-tab svg { width: 14px; height: 14px; }
+
+        .icaw-nav-arrows { display: flex; gap: 16px; }
+
+        .icaw-arrow {
+            cursor: pointer;
+            color: #8A94A6;
+            transition: color 0.2s;
+            user-select: none;
+        }
+        .icaw-arrow:hover { color: #ffffff; }
+        .icaw-arrow svg { width: 24px; height: 24px; }
+
+        /* Carousel */
+        .icaw-carousel-viewport {
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow-x: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            scroll-behavior: smooth;
+            scroll-snap-type: x mandatory;
+            padding-bottom: 20px;
+        }
+        .icaw-carousel-viewport::-webkit-scrollbar { display: none; }
+
+        .icaw-carousel-track {
+            display: flex;
+            gap: 20px;
+            padding: 0 4px;
+        }
+
+        /* Card */
+        .icaw-card {
+            background: #131A2A;
+            border-radius: 16px;
+            padding: 24px; /* Slightly increased padding */
+            min-width: 380px; /* Slightly wider to match new height */
+            height: 440px;    /* Fixed height as requested */
+            flex: 0 0 auto;
+            scroll-snap-align: start;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .icaw-card-top {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            z-index: 2;
+            flex-shrink: 0; /* Prevent header from shrinking */
+        }
+
+        .icaw-coin-icon { width: 40px; height: 40px; border-radius: 50%; } /* Slightly larger icon */
+        
+        .icaw-coin-names { display: flex; flex-direction: column; }
+        .icaw-coin-name { font-weight: 600; font-size: 22px; letter-spacing: -0.02em; }
+        .icaw-coin-symbol { font-size: 18px; color: #8A94A6; text-transform: uppercase; font-weight: 600;}
+        
+        /* Full Width Graph Container */
+        .icaw-card-graph-container {
+            flex-grow: 1; /* Allow graph to take up available vertical space */
+            display: flex;
+            align-items: center; /* Center graph vertically in its space */
+            
+            /* Negative margins to pull graph to the edges of the card */
+            margin-left: -24px; 
+            margin-right: -24px;
+            width: calc(100% + 48px);
+            
+            position: relative;
+            min-height: 120px; /* Ensure meaningful height for graph */
+        }
+
+        .icaw-sparkline {
+            width: 100%;
+            height: 100%;
+            display: block;
+            /* Ensure the SVG scales to cover the space nicely */
+            max-height: 160px; 
+        }
+
+        .icaw-card-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-top: auto; /* Push to bottom */
+            z-index: 2;
+            flex-shrink: 0; /* Prevent footer from shrinking */
+        }
+
+        .icaw-price-info { display: flex; flex-direction: column; gap: 4px; }
+        
+        .icaw-price {
+            font-size: 24px;
+            font-weight: 600;
+        }
+        
+        .icaw-currency { font-size: 17px; color: #8A94A6; font-weight: 600; }
+        .icaw-change { font-size: 17px; font-weight: 600; }
+        .icaw-change.icaw-down { color: #FF3B30; }
+        .icaw-change.icaw-up { color: #34C759; }
+
+        .icaw-buy-btn {
+            background: #1C283E;
+            color: #0091FF;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .icaw-buy-btn:hover { background: #25334d; }
+        
+        /* Pagination */
+        .icaw-pagination {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 24px;
+        }
+        
+        .icaw-dot {
+            width: 24px;
+            height: 4px;
+            background: #1C283E;
+            border-radius: 2px;
+            transition: background 0.2s;
+        }
+        
+        .icaw-dot.icaw-active { background: #0091FF; }
+
+        .icaw-loading-placeholder {
+            text-align: center;
+            color: #8A94A6;
+            padding: 40px;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .icaw-title { font-size: 22px; }
+            .icaw-controls-bar { flex-direction: column; gap: 16px; align-items: flex-start; }
+            .icaw-nav-arrows { display: none; }
+            .icaw-card { min-width: 280px; height: 400px; /* Slightly shorter on mobile for viewability */ }
+        }
